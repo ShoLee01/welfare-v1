@@ -1,7 +1,6 @@
 # main.py
 from fastapi import FastAPI
 from mangum import Mangum
-from fastapi.security import OAuth2PasswordRequestForm
 from fastapi import Depends, HTTPException, status
 from settings import (
     users_collection,
