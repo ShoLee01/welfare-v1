@@ -50,7 +50,7 @@ async def login_for_access_token(form_data: UserCreate):
     access_token = create_access_token(data={"sub": user.username})
     return {"access_token": access_token, "token_type": "bearer"}
 
-@app.get(f"{MAIN_ROUTE}/test")
+@app.get(f"{MAIN_ROUTE}/diagnosis")
 async def test(current_user: User = Depends(get_current_user)):
     return {"mensaje": "¡Hola Mundo Protegido!"}
 
