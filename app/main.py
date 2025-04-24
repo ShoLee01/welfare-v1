@@ -51,7 +51,8 @@ async def login_for_access_token(form_data: UserCreate):
 
 @app.post(f"{MAIN_ROUTE}/diagnosis")
 async def diagnosis(current_user: PatientData = Depends(get_current_user)):
-    return get_medical_recommendation(current_user)
+    diagnosis = await get_medical_recommendation(current_user)
+    return diagnosis
 
 handler = Mangum(app)
 
