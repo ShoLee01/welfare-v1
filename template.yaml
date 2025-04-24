@@ -6,7 +6,7 @@ Resources:
   DiagnosisAPI:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: ./app
+      CodeUri: .
       Handler: main.handler
       Runtime: python3.9
       Events:
