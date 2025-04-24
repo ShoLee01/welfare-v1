@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Endpoint de diagnóstico médico
+
+Resources:
+  DiagnosisAPI:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./app
+      Handler: main.handler
+      Runtime: python3.9
+      Events:
+        DiagnosisEndpoint:
+          Type: Api
+          Properties:
+            Path: /api/v1/diagnosis
+            Method: POST
+
+Outputs:
+  ApiUrl:
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/dev/"
