@@ -51,7 +51,7 @@ async def login_for_access_token(form_data: UserCreate):
 
 @app.post(f"{MAIN_ROUTE}/diagnosis")
 async def test(current_user: User = Depends(get_current_user)):
-    return {"mensaje": "¡Hola Mundo Protegido!"}
+    return {"mensaje": "¡Hola Mundo Protegido gaaa!"}
 
 handler = Mangum(app)
 
