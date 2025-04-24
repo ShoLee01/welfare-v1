@@ -43,4 +43,5 @@ jobs:
         sam deploy --stack-name diagnosis-api \
           --capabilities CAPABILITY_IAM \
           --resolve-s3 \
-          --no-confirm-changeset
+          --no-confirm-changeset \
+          --parameter-overrides StageName=dev
