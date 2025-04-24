@@ -2,6 +2,7 @@
 from fastapi import FastAPI
 from mangum import Mangum
 from fastapi import Depends, HTTPException, status
+from dotenv import load_dotenv
 from settings import (
     users_collection,
 )
@@ -18,6 +19,9 @@ from models import (
     Token,
     User
 )
+
+# ENV
+load_dotenv()
 
 # Configuración inicial
 app = FastAPI()
