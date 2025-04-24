@@ -13,9 +13,20 @@ Resources:
         DiagnosisEndpoint:
           Type: Api
           Properties:
+            RestApiId: !Ref DiagnosisApiGateway
             Path: /api/v1/diagnosis
             Method: POST
 
+  DiagnosisApiGateway:
+    Type: AWS::Serverless::Api
+    Properties:
+      Name: DiagnosisApi
+      StageName: Prod
+      Cors:
+        AllowMethods: "'OPTIONS,GET,POST,PUT,DELETE'"
+        AllowHeaders: "'Content-Type,Authorization'"
+        AllowOrigin: "'*'"
+
 Outputs:
   ApiUrl:
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+    Value: !Sub "https://${DiagnosisApiGateway}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
