@@ -2,6 +2,11 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: Endpoint de diagnóstico médico
 
+Parameters:
+  StageName:
+    Type: String
+    Default: dev
+
 Resources:
   DiagnosisAPI:
     Type: AWS::Serverless::Function
@@ -18,4 +23,4 @@ Resources:
 
 Outputs:
   ApiUrl:
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/dev/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/${StageName}/"
