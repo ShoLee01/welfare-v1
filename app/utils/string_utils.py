@@ -55,7 +55,11 @@ async def get_medical_recommendation(patient_data: PatientData) -> MedicalRecomm
 **Ejemplo válido:**
 {"specialty": "Cardiología", "severity": 5}
 
-Nota: No me des una respuesta diferente y no digas nada más en la respuesta 
+
+
+Nota: 
+1. No me des una respuesta diferente y no digas nada más en la respuesta 
+2. Si consideras que lo que se describe es una area muy especifica que no se encuetra en las Especialidades válidas asignarás Medicina General por defecto
 """
 
     user_input = f"""Datos del paciente:
