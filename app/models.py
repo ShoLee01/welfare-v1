@@ -31,3 +31,4 @@ class PatientData(BaseModel):
 class MedicalRecommendation(BaseModel):
     specialty: str
     severity: int
+    error: Optional[str] = None

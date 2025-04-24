@@ -161,7 +161,6 @@ PatientData(
     gender="femenino"
 )
 
-# Caso 18 (Cardiología)
 PatientData(
     symptoms="edema en miembros inferiores, disnea nocturna",
     age=70,
@@ -170,7 +169,6 @@ PatientData(
     gender="masculino"
 )
 
-# Caso 19 (Neurología)
 PatientData(
     symptoms="temblor en reposo, rigidez muscular",
     age=68,
@@ -179,7 +177,6 @@ PatientData(
     gender="femenino"
 )
 
-# Caso 20 (Psicología)
 PatientData(
     symptoms="ansiedad social, ataques de pánico",
     age=22,
@@ -188,7 +185,6 @@ PatientData(
     gender="femenino"
 )
 
-# Caso 21 (Obstetricia)
 PatientData(
     symptoms="contracciones regulares cada 5 minutos",
     age=29,
@@ -197,7 +193,6 @@ PatientData(
     gender="femenino"
 )
 
-# Caso 22 (Neumología)
 PatientData(
     symptoms="sibilancias, opresión torácica",
     age=14,
@@ -206,7 +201,6 @@ PatientData(
     gender="masculino"
 )
 
-# Caso 23 (Endocrinología)
 PatientData(
     symptoms="intolerancia al frío, piel seca",
     age=45,
@@ -215,7 +209,6 @@ PatientData(
     gender="femenino"
 )
 
-# Caso 24 (Traumatología)
 PatientData(
     symptoms="dolor de rodilla al subir escaleras",
     age=50,

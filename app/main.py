@@ -5,6 +5,7 @@ from fastapi import Depends, HTTPException, status
 from settings import (
     users_collection,
 )
+from fastapi.middleware.cors import CORSMiddleware
 from security import (
     get_user,
     get_current_user,
@@ -23,6 +24,14 @@ from utils.string_utils import get_medical_recommendation
 
 # Configuración inicial
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 MAIN_ROUTE = "/api/v1"
 
