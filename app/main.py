@@ -22,7 +22,6 @@ from models import (
 
 # Configuración inicial
 app = FastAPI()
-handler = Mangum(app)
 
 MAIN_ROUTE = "/api/v1"
 
@@ -54,6 +53,7 @@ async def login_for_access_token(form_data: UserCreate):
 async def test(current_user: User = Depends(get_current_user)):
     return {"mensaje": "¡Hola Mundo Protegido!"}
 
+handler = Mangum(app)
 
 if __name__ == "__main__":
     import uvicorn

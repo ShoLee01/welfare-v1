@@ -2,16 +2,11 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: Diagnostico medico
 
-Parameters:
-  StageName:
-    Type: String
-    Default: dev
-
 Resources:
   DiagnosisAPI:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: .
+      CodeUri: ./app
       Handler: main.handler
       Runtime: python3.9
       Events:
@@ -23,4 +18,4 @@ Resources:
 
 Outputs:
   ApiUrl:
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/${StageName}/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"

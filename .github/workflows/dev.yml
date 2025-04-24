@@ -19,7 +19,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt
+        pip install -r app/requirements.txt
         pip install aws-sam-cli
 
     - name: Configure AWS Credentials
@@ -38,7 +38,11 @@ jobs:
       run: |
         ls -la
 
-    - name: SAM Deploy
+    - name: Build SAM App
+      run: |
+        sam build
+
+    - name: Deploy SAM App
       run: |
         sam deploy --stack-name diagnosis-api \
           --capabilities CAPABILITY_IAM \
