@@ -1,5 +1,5 @@
 # main.py
-from fastapi import FastAPI
+from fastapi import FastAPI, Body
 from mangum import Mangum
 from fastapi import Depends, HTTPException, status
 from settings import (
@@ -16,6 +16,7 @@ from models import (
     UserInDB,
     UserCreate,
     Token,
+    User,
     PatientData
 )
 from utils.string_utils import get_medical_recommendation
@@ -50,8 +51,9 @@ async def login_for_access_token(form_data: UserCreate):
     return {"access_token": access_token, "token_type": "bearer"}
 
 @app.post(f"{MAIN_ROUTE}/diagnosis")
-async def diagnosis(current_user: PatientData = Depends(get_current_user)):
-    diagnosis = await get_medical_recommendation(current_user)
+async def diagnosis(current_user: User = Depends(get_current_user), 
+                    patient_data: PatientData = Body(...)):
+    diagnosis = await get_medical_recommendation(patient_data)
     return diagnosis
 
 handler = Mangum(app)
