@@ -10,6 +10,6 @@ db = client[os.getenv("MONGODB_NAME")]
 users_collection = db["users"]
 
 # Configuración JWT
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = "fastapi-insecure-7qp@z!16c03sb1qfgxqvxh=j5bhzcz!qo&p!p4dsiix&v$zrl9"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 525600 * 100
