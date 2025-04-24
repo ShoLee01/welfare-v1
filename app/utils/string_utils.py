@@ -36,7 +36,7 @@ ERROR_RESPONSE = {
     "error": "Nuestro sistema de triaje no está disponible. Por seguridad, contacte directamente a un servicio médico de emergencia."
 }
 
-def get_medical_recommendation(patient_data: PatientData) -> MedicalRecommendation:
+async def get_medical_recommendation(patient_data: PatientData) -> MedicalRecommendation:
     SYSTEM_PROMPT = """Eres un sistema experto médico que debe:
 1. Analizar síntomas, edad, género e historial médico
 2. Priorizar síntomas con mayor riesgo vital
