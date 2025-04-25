@@ -76,6 +76,8 @@ Ejemplo CORRECTO (caso grave):
 
 Ejemplo INCORRECTO:
 {"specialty": "Gastroenterología", "severity": 4}  // ¡Violó regla 1! 
+
+Nota muy importante: Asignar UNA sola especialidad de la lista (sin excepciones)
 """
 
 SPECIALTIES = [
