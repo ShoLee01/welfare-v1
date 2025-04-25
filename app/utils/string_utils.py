@@ -40,7 +40,7 @@ async def get_medical_recommendation(patient_data: PatientData) -> MedicalRecomm
     SYSTEM_PROMPT = """Eres un sistema experto médico que debe:
 1. Analizar síntomas, edad, género e historial médico
 2. Priorizar síntomas con mayor riesgo vital
-3. Asignar UNA sola especialidad de la lista
+3. Asignar UNA sola especialidad de la lista, solo en caso los síntomas presentados representan con Gravedad 5 asignarás Medicina General
 4. Calcular gravedad (1-5) según urgencia
 5. Respuesta ESTRICTAMENTE en formato JSON válido
 
@@ -60,7 +60,7 @@ async def get_medical_recommendation(patient_data: PatientData) -> MedicalRecomm
 Nota: 
 1. No me des una respuesta diferente y no digas nada más en la respuesta 
 2. Si consideras que lo que se describe es una area muy especifica que no se encuetra en las Especialidades válidas asignarás Medicina General por defecto
-3. Si los síntomas presentados representan algo muy grave asignarás Medicina General
+3. Si los síntomas presentados representan con Gravedad 5 asignarás Medicina General
 """
 
     user_input = f"""Datos del paciente:
